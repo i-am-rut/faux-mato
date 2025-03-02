@@ -1,5 +1,8 @@
-const element = document.createElement("h1")
-element.innerHTML = "This is the usage of javascript"
+import React from "react"
+import ReactDOM from "react-dom/client"
 
-const root = document.getElementById('root')
-root.appendChild(element)
+const parent = React.createElement("h1", {id: 1}, "This is the begining of something new 😉!")
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(parent)
