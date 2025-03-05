@@ -30,6 +30,13 @@ body {
     font-size: 1.5rem;
 }
 
+.login-logout-button {
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-weight: bold;
+    background-color: transparent;
+}
+
 .body-container {
     margin-left: auto;
     margin-right: auto;
@@ -40,6 +47,8 @@ body {
 
 .filter-container {
     margin: 1rem 0;
+    display: flex;
+    gap: 1.5rem;
 }
 
 .res-card-container {
@@ -48,6 +57,10 @@ body {
     gap: 0.5rem;
     overflow-x: scroll;
     padding: 0.5rem;
+}
+
+.res-card-container::-webkit-scrollbar {
+    display: none;
 }
 
 .res-card {
@@ -147,3 +160,4 @@ body {
 .footer {
     margin-top: auto;
 }
+
