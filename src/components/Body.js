@@ -1,6 +1,7 @@
 import ReastaurantCard from "./RestaurantCard"
 import { useEffect, useRef, useState } from "react"
 import ShimmerResCards from "./ShimmerResCards"
+import { HOME_PAGE_SWIGGY_API } from "../utils/constants"
 
 const Body = () => {
     const [resList, setResList] = useState([])
@@ -13,7 +14,7 @@ const Body = () => {
     }, [])
 
     const fetchData = async() => {
-        const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+        const data = await fetch(HOME_PAGE_SWIGGY_API)
 
         const json = await data.json()
         setResList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(res => res.info))

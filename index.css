@@ -30,6 +30,11 @@ body {
     font-size: 1.5rem;
 }
 
+.header-container > ul > a {
+    text-decoration: none;
+    color: black;
+}
+
 .login-logout-button {
     cursor: pointer;
     border-radius: 0.4rem;
@@ -157,7 +162,28 @@ body {
     margin-top: 1rem;
 }
 
-.footer {
+.footer-container {
     margin-top: auto;
 }
 
+.footer {
+    margin-top: 5rem;
+    margin-bottom: 0;
+    height: 4rem;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    padding-top: 2rem;
+}
+
+.error-page-container, .about-page-container, .contact-page-container {
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.error-page-container > img {
+    width: 50%;
+}

@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <h1 className='footer'>
-      This is footer
-    </h1>
+    <div className='footer-container'>
+      <p className='footer'>&#169; {new Date().getFullYear()} Faux-mato Limited.</p>
+    </div>
   )
 }
 
