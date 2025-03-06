@@ -8,9 +8,7 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import ErrorPage from "./components/ErrorPage"
-
-
-
+import RestaurantMenu from "./components/RestaurantMenu"
 
 
 const App = () => {
@@ -24,6 +22,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="cart" element={<Cart />} />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="restaurant/:resId" element={<RestaurantMenu />} />
         </Routes>
         <Footer />
       </BrowserRouter>

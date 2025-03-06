@@ -17,6 +17,12 @@ body {
     background-color: lightpink;
 }
 
+.header-logo-location-container  {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
 .faux-mato-logo {
     margin: 0;
     height: 8rem;
@@ -66,6 +72,11 @@ body {
 
 .res-card-container::-webkit-scrollbar {
     display: none;
+}
+
+.res-card-link {
+    text-decoration: none;
+    color: black;
 }
 
 .res-card {
@@ -165,6 +176,50 @@ body {
 .footer-container {
     margin-top: auto;
 }
+
+.res-menu-page-container {
+    margin: 2rem auto;
+    max-width: 60rem;
+}
+
+.res-details-card-container {
+    /* background-color: whitesmoke; */
+    padding: 1.5rem;
+}
+
+.res-details-card-info {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 0.05rem solid #f0f0f0;
+    box-shadow: 0 1rem 0.5rem rgba(0, 0, 0, 0.6);
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+.rating-container > svg {
+    padding: 0.3rem;
+    background-color: green;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.cuisines {
+    color: #FF5200;
+    font-weight: bold;
+}
+
+.res-menu-container {
+    padding: 1.5rem;
+}
+
 
 .footer {
     margin-top: 5rem;

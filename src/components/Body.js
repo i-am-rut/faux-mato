@@ -2,6 +2,7 @@ import ReastaurantCard from "./RestaurantCard"
 import { useEffect, useRef, useState } from "react"
 import ShimmerResCards from "./ShimmerResCards"
 import { HOME_PAGE_SWIGGY_API } from "../utils/constants"
+import { Link } from "react-router"
 
 const Body = () => {
     const [resList, setResList] = useState([])
@@ -48,7 +49,7 @@ const Body = () => {
                 <button onClick={handleTopResClick} className="filter-button">Top Rated Restaurants</button>
             </div>
             <div className="res-card-container">
-                {resList.length === 0 ? <ShimmerResCards /> : filteredList.length === 0? <h1>No results matching applied filters.</h1> : filteredList.map(res => <ReastaurantCard key={res.id} resData={res} />)
+                {resList.length === 0 ? <ShimmerResCards /> : filteredList.length === 0? <h1>No results matching applied filters.</h1> : filteredList.map(res => <Link to={"restaurant/" + res.id} key={res.id} className="res-card-link"><ReastaurantCard  resData={res} /></Link>)
                 }
             </div>
         </div>
