@@ -1,9 +1,10 @@
 import React from 'react'
+import ShimmerResCard from './ShimmerResCard'
 
 const Cart = () => {
   return (
     <div className='my-8'>
-      Cart Page
+      <ShimmerResCard />
     </div>
   )
 }

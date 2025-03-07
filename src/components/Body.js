@@ -1,6 +1,6 @@
 import ReastaurantCard from "./RestaurantCard"
 import { useEffect, useRef, useState } from "react"
-import ShimmerResCards from "./ShimmerResCards"
+import ShimmerResCard from "./ShimmerResCard"
 import { HOME_PAGE_SWIGGY_API } from "../utils/constants"
 import { Link } from "react-router"
 
@@ -11,7 +11,7 @@ const Body = () => {
 
 
     useEffect(() => {
-        fetchData()
+       fetchData()
     }, [])
 
     const fetchData = async() => {
@@ -35,22 +35,26 @@ const Body = () => {
 
     
     return (
-        <div className="my-8">
-            <div className="filter-container">
-                <div className="search-container">
+        <div className="my-8 mx-2">
+            <div className="flex flex-col items-start py-4 gap-4 max-w-6xl">
+                <div className="flex gap-4 items-center">
                     <input 
                         ref={search} 
+                        className="px-2 py-1 border border-gray-500 rounded-lg"
                         name="search-input" 
                         type="text"  
                         onKeyUp={(e => e.key === "Enter" && handleSearchClick())}
                         placeholder="Search restaurants"/>
-                    <button onClick={handleSearchClick}>Search</button>
+                    <button className=" px-2 py-1  rounded-lg bg-orange-100 font-bold cursor-pointer focus:bg-orange-200 hover:bg-orange-200 active:bg-orange-300" onClick={handleSearchClick}>Search</button>
                 </div>
-                <button onClick={handleTopResClick} className="filter-button">Top Rated Restaurants</button>
+                <button onClick={handleTopResClick} className="px-2 py-1 bg-gray-200 rounded-3xl cursor-pointer">Top Rated Restaurants</button>
             </div>
-            <div className="res-card-container">
-                {resList.length === 0 ? <ShimmerResCards /> : filteredList.length === 0? <h1>No results matching applied filters.</h1> : filteredList.map(res => <Link to={"restaurant/" + res.id} key={res.id} className="res-card-link"><ReastaurantCard  resData={res} /></Link>)
-                }
+            <div className="max-w-6xl min-w-80">
+                <h1 className="text-3xl font-bold pb-4">Popular Restaurants</h1>
+                <div className="flex gap-2 overflow-x-auto pb-4 border-b-2  scrollbar">
+                    {resList.length === 0 ? <ShimmerResCard /> : filteredList.length === 0? <h1>No results matching applied filters.</h1> : filteredList.map(res => <Link to={"restaurant/" + res.id} key={res.id} className="res-card-link"><ReastaurantCard  resData={res} /></Link>)
+                    }
+                </div>
             </div>
         </div>
     )
