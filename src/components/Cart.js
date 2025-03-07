@@ -2,9 +2,9 @@ import React from 'react'
 
 const Cart = () => {
   return (
-    <h1>
+    <div className='my-8'>
       Cart Page
-    </h1>
+    </div>
   )
 }
 

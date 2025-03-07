@@ -1,11 +1,9 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import Header from "./components/Header"
+import Layout from "./components/Layout"
 import Body from "./components/Body"
-import Footer from "./components/Footer"
 import { BrowserRouter, Route, Routes } from "react-router"
 import About from "./components/About"
-import Contact from "./components/Contact"
 import Cart from "./components/Cart"
 import ErrorPage from "./components/ErrorPage"
 import RestaurantMenu from "./components/RestaurantMenu"
@@ -16,20 +14,24 @@ const App = () => {
   const status = useOnlineStatus()
   return (
     <div className="app-container">
-      <BrowserRouter>
-        <Header />
-        {status ? 
-          <Routes>
-          <Route path="/" element={<Body />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="cart" element={<Cart />} />
-          <Route path="*" element={<ErrorPage />} />
-          <Route path="restaurant/:resId" element={<RestaurantMenu />} />
-        </Routes> :
-        <h1>Looks like You are not connected to internet. Check your connection.</h1>  
-        }
-        <Footer />
+      <BrowserRouter> 
+          {status ?
+            <Routes>
+              <Route path="/" element={<Layout />} >
+                  <>
+                    <Route index element={<Body />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="cart" element={<Cart />} />
+                    <Route path="restaurant/:resId" element={<RestaurantMenu />} />
+                    <Route path="*" element={<ErrorPage />} />
+                  </>
+              </Route>
+            </Routes>
+              :
+              <div className="mt-0 bg-blue-300 h-[100vh]">
+                <h1 className="pt-60 px-4 font-bold text-2xl sm:text-4xl sm:font-bold"> Looks like you are offline 😔. Check your internet connection 🛜.</h1> 
+              </div> 
+          }
       </BrowserRouter>
     </div>
   )

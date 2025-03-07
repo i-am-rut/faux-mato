@@ -35,7 +35,7 @@ const Body = () => {
 
     
     return (
-        <div className="body-container">
+        <div className="my-8">
             <div className="filter-container">
                 <div className="search-container">
                     <input 
