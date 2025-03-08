@@ -6,6 +6,7 @@ import useRestaurantMenu from '../utils/useRestaurantMenu'
 import ShimmerResCards from './ShimmerResCard'
 import { CiForkAndKnife } from 'react-icons/ci'
 import { CLOUDINARY_CDN_URL } from '../utils/constants'
+import { FaAngleUp } from 'react-icons/fa6'
 
 const RestaurantMenu = () => {
     const { resId } = useParams()
@@ -28,10 +29,13 @@ const RestaurantMenu = () => {
                 M E N U
                 <CiForkAndKnife className='ml-4 font-bold' />
             </div>
-            <div className='res-menu-container px-4'>
-                <h1 className='text-2xl font-bold mb-4'>{restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.title} ({restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards.length})</h1> 
-                <div className='menu-items-container'>
-                    <div className='flex items-center gap-4 pb-4 my-4 border-b'>
+            <div className='res-menu-container'>
+                <div className='flex justify-between items-center p-4 cursor-pointer rounded-xl hover:border-gray-600 '>
+                    <h1 className='text-2xl font-bold '>{restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.title} ({restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards.length})</h1> 
+                    <FaAngleUp />
+                </div>
+                <div className='menu-items-container px-4'>
+                    <div className='flex items-center gap-4 pb-4 my-4 border-b justify-between'>
                         <div>
                             <div className={`${restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG"? "text-green-600" : "text-red-700"} text-2xl`}>{restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? <FaStar /> : <FaRegCaretSquareUp />}</div>
                             <h3 className='text-xl font-semibold'>{restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.name}</h3>
@@ -41,7 +45,7 @@ const RestaurantMenu = () => {
                         </div>
                         <img className='w-36 h-36 rounded-lg bg-green-100' src={CLOUDINARY_CDN_URL + restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.imageId} alt={`${restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.name} image`} />
                     </div>
-                    <div className='flex items-center pb-4 my-4 border-b'>
+                    <div className='flex items-center pb-4 my-4 border-b justify-between'>
                         <div>
                             <div className={`${restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG"? "text-green-600" : "text-red-700"} text-2xl`}>{restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info?.itemAttribute?.vegClassifier === "VEG" ? <FaStar /> : <FaRegCaretSquareUp />}</div>
                             <h3 className='text-xl font-semibold'>{restaurant[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[1]?.card?.info?.name}</h3>

@@ -8,6 +8,7 @@ import Cart from "./components/Cart"
 import ErrorPage from "./components/ErrorPage"
 import RestaurantMenu from "./components/RestaurantMenu"
 import useOnlineStatus from "./utils/useOnlineStatus"
+import Search from "./components/Search"
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="about" element={<About />} />
                     <Route path="cart" element={<Cart />} />
                     <Route path="restaurant/:resId" element={<RestaurantMenu />} />
+                    <Route path="search" element={<Search />} />
                     <Route path="*" element={<ErrorPage />} />
                   </>
               </Route>
