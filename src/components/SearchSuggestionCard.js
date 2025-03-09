@@ -8,7 +8,7 @@ const SearchSuggestionCard = ({suggestion }) => {
             <img className='w-16 h-16 rounded-lg' src={CLOUDINARY_CDN_URL + suggestion.cloudinaryId} alt={`${suggestion.text} image`} />
             <div className='flex flex-col'>
             <p className='font-bold my-1'>{suggestion.text}</p>
-            <p className='text-gray-400 '>{suggestion.type === "DISH"? "Dish" : suggestion.type === "RESTAURANT" ? "Restaurant" : suggestion.type === "CUISINE" && "Cuisine"}</p>
+            <p className='text-gray-400 '>{suggestion.tagToDisplay}</p>
             </div>
         </div>
     </>

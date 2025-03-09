@@ -50,7 +50,7 @@ const Search = () => {
           <button onClick={handleCrossClick} className='px-4 py-2 border border-l-0 focus:border-l-0'>{searchText === "" ? <IoSearch /> : <RxCross1 />}</button>
         </div>
         {showSuggestions && <div className='flex flex-col w-[51rem] border border-gray-400 p-4'>
-          {suggestions.map(suggestion => <SearchSuggestionCard suggestion={suggestion} />)}
+          {suggestions.map(suggestion => <SearchSuggestionCard suggestion={suggestion} key={suggestion.cta.link} />)}
         </div>}
       
     </div>

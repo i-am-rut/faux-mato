@@ -7,7 +7,6 @@ import { Link } from "react-router"
 const Body = () => {
     const [resList, setResList] = useState([])
     const [filteredList, setFilteredList] = useState([])
-    const search = useRef(null)
 
 
     useEffect(() => {
@@ -21,11 +20,6 @@ const Body = () => {
         setResList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(res => res.info))
         setFilteredList(json.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants?.map(res => res.info))
         
-    }
-
-    const handleSearchClick = () => {
-        const filtered = resList.filter(res => res.name.toLowerCase().includes(search.current.value.toLowerCase()))
-        setFilteredList(filtered)
     }
 
     const handleTopResClick = () => {
