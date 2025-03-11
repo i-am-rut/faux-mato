@@ -1,7 +1,7 @@
 
 import { FaStar } from "react-icons/fa"
 import { CLOUDINARY_CDN_URL } from "../utils/constants"
-// text-white w-8 h-8 p-[0.4rem] bg-green-700 rounded-full
+
 const ReastaurantCard = ({resData}) => {
     return (
         <div className="p-2 w-64" id={resData.id}>
@@ -15,5 +15,18 @@ const ReastaurantCard = ({resData}) => {
         </div>
     )
 }
+
+
+export const withOpenLabel = (ReastaurantCard) => {
+    return (props) => {
+        return (
+            <div>
+                <label className="absolute px-2 bg-green-600 text-white font-bold z-10">Open now</label>
+                <ReastaurantCard {...props} />
+            </div>
+        )
+    }
+}
+
 
 export default ReastaurantCard
