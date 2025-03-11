@@ -13,7 +13,7 @@ const Header = () => {
     }
 
     return (
-        <header className="flex justify-between px-4 py-2 bg-white h-20 items-center shadow-lg font-[Gilroy]" >
+        <header className="flex justify-between px-4 py-2 bg-white h-20 items-center shadow-lg font-[Gilroy] fixed w-[100%] z-50" >
             <div className="flex gap-2 items-center">
             <Link to='/' className="w-20"><img src={Fauxmato}alt="faux-mato-logo" className="w-[100%] rounded-lg" /></Link>
             <p className="max-[40rem]:hidden"><strong >Location:</strong> Kormangala, Banglore</p>

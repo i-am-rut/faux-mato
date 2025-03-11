@@ -30,9 +30,9 @@ const App = () => {
               </Route>
             </Routes>
               :
-              <div className="mt-0 bg-blue-300 h-[100vh]">
-                <h1 className="pt-60 px-4 font-bold text-2xl sm:text-4xl sm:font-bold"> Looks like you are offline 😔. Check your internet connection 🛜.</h1> 
-              </div> 
+            <div className="mt-0 bg-blue-300 h-[100vh]">
+              <h1 className="pt-60 px-4 font-bold text-2xl sm:text-4xl sm:font-bold"> Looks like you are offline 😔. Check your internet connection 🛜.</h1> 
+            </div> 
           }
       </BrowserRouter>
     </div>

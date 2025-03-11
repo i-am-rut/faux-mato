@@ -10,8 +10,6 @@ const RestaurantMenu = () => {
     const { resId } = useParams()
     const {restaurant, categories} = useRestaurantMenu(resId)
     const ResSubMenuAccordian = resMenuAccordianWithEnclosingCategory(ResMenuAccordian)
-
-    console.log(restaurant)
     
     if (!restaurant) return <ShimmerResCards />
 
