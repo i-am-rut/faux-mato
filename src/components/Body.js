@@ -6,22 +6,24 @@ import PageBottomComponent from "./PageBottomComponent"
 import ShimmerResCard from "./ShimmerResCard"
 
 const Body = () => {
-    const [pageData, setPageData] = useState(null)
+    const [pageData, setPageData] = useState(JSON.parse(sessionStorage.getItem("homePageData")) || null)
 
 
 
     useEffect(() => {
-       fetchData()
+        if(!pageData) {
+            fetchData()
+        }
     }, [])
 
     const fetchData = async() => {
         const data = await fetch(HOME_PAGE_SWIGGY_API)
         const json = await data.json()
-        setPageData([json?.data?.cards[0], json?.data?.cards[1], json?.data?.cards[2], json?.data?.cards[4], ])    
+        setPageData([json?.data?.cards[0], json?.data?.cards[1], json?.data?.cards[2], json?.data?.cards[4], ]) 
+        sessionStorage.setItem("homePageData", JSON.stringify([json?.data?.cards[0], json?.data?.cards[1], json?.data?.cards[2], json?.data?.cards[4],]))   
     }
 
     
-
     
     return (
         <div>
