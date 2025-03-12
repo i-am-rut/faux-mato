@@ -11,6 +11,7 @@ const DishWiseRestaurants = () => {
     const slug = ["collection="+linkSection[0].split("=")[1], linkSection[2], linkSection[3]].join("&")
     const [resData, setResData] = useState(null)
     const [restaurants, setRestaurants] = useState(null)
+    const [fail, setfail] = useState("")
     const RestaurantCardWithPromoted = withPromotedLabel(ReastaurantCard)
     
     useEffect(() => {
@@ -21,6 +22,7 @@ const DishWiseRestaurants = () => {
         try{
             const data = await fetch(RES_BY_DISH_API + slug +"&sortBy=&filters=&offset=0&page_type=null")
             const json = await data.json()
+            json.statusCode === 1 && setfail(json.statusCode)
             setResData(json?.data?.cards[0]?.card?.card)
             setRestaurants(json?.data?.cards.filter(c => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"))
 
@@ -28,6 +30,10 @@ const DishWiseRestaurants = () => {
             console.log("Fetch error:", err)
             navigate("*")
         }
+    }
+
+    if(fail === 1) {
+        navigate("*")
     }
 
   return (
