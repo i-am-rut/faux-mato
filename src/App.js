@@ -9,6 +9,7 @@ import ErrorPage from "./components/ErrorPage"
 import RestaurantMenu from "./components/RestaurantMenu"
 import useOnlineStatus from "./utils/useOnlineStatus"
 import Search from "./components/Search"
+import DishWiseRestaurants from "./components/DishWiseRestaurants"
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
                     <Route path="cart" element={<Cart />} />
                     <Route path="restaurant/:resId" element={<RestaurantMenu />} />
                     <Route path="search" element={<Search />} />
+                    <Route path=":dishSlug" element={<DishWiseRestaurants />} />
                     <Route path="*" element={<ErrorPage />} />
                   </>
               </Route>

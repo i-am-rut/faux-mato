@@ -13,3 +13,5 @@ export const GITHUB_URL = 'https://www.github.com/i-am-rut'
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/i-am-rutpatil'
 
 export const SWIGGY_SEARCH_SUGGESTIONS = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=12.9352403&lng=77.624532&str="
+
+export const RES_BY_DISH_API = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&"

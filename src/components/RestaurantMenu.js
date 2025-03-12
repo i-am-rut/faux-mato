@@ -11,7 +11,7 @@ const RestaurantMenu = () => {
     const {restaurant, categories} = useRestaurantMenu(resId)
     const ResSubMenuAccordian = resMenuAccordianWithEnclosingCategory(ResMenuAccordian)
     
-    if (!restaurant) return <ShimmerResCards />
+    if (!restaurant) return <div className='flex flex-wrap gap-4 w-6xl mt-32'><ShimmerResCards /></div>
 
     return (
         <div className='my-8 mx-2 max-w-5xl min-w-80'>

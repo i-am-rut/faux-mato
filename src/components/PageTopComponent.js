@@ -14,7 +14,7 @@ const PageTopComponent = ({ data }) => {
             {data &&   
                 <div className='w-full gap-2 flex overflow-x-auto pb-4 border-b-2 border-gray-200 scrollbar flex-nowrap'>
                     {dishList?.map(dish => (
-                            <Link to={`/${dish?.action?.text}`} key={dish.id} className='p-2 min-w-[200px] cursor-pointer'>
+                            <Link to={`/${dish?.action?.link.split("?")[1]}`} key={dish.id} className='p-2 min-w-[200px] cursor-pointer'>
                                 <img className='w-full' src={CLOUDINARY_CDN_URL + dish.imageId} alt="Dish image" />
                             </Link>
                         ))
