@@ -3,10 +3,12 @@ import { Link, NavLink } from "react-router"
 import Fauxmato from "../../public/Faux-mato-logo.png"
 import { GiShoppingBag } from "react-icons/gi"
 import { IoSearch } from "react-icons/io5"
+import { useSelector } from "react-redux"
 
 
 const Header = () => {
     const [logStatusButton, setLogStatusButton] = useState("Login")
+    const cartItems = useSelector((store) => store.cart.items)
 
     const handleLogStatusButtonClick = () => {
         setLogStatusButton(prev => prev === "Login" ? "Logout" : "Login")
@@ -20,7 +22,7 @@ const Header = () => {
             </div>
             <ul className="flex gap-4 pr-4 font-bold items-center max-[28rem]:pr-0 max-[28rem]:gap-2">
                 <NavLink className={({ isActive }) => (isActive && 'text-orange-500') + ' ' + "flex items-center gap-1 hover:underline active:text-orange-500"} to='/search'><IoSearch /> Search</NavLink>
-                <NavLink to='/cart' className={({ isActive }) => (isActive && 'text-orange-500') + ' ' + "flex items-center gap-1 hover:underline"}><GiShoppingBag /><span className="text-lg">(0)</span></NavLink>
+                <NavLink to='/cart' className={({ isActive }) => (isActive && 'text-orange-500') + ' ' + "flex items-center gap-1 hover:underline"}><GiShoppingBag /><span className="text-lg">({cartItems.length})</span></NavLink>
                 <button className="login-logout-button" onClick={handleLogStatusButtonClick}>{logStatusButton}</button>
             </ul>
         </header>

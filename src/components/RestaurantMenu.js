@@ -27,7 +27,7 @@ const RestaurantMenu = () => {
                     </div>
                     <div className='max-w-6xl'>
                         {categories &&
-                            categories.map((c, index) => c?.card?.card?.categories ? <ResSubMenuAccordian key={c?.card?.card?.categoryId} title={c?.card?.card?.title} list={c?.card?.card?.categories} /> : <ResMenuAccordian key={c?.card?.card?.title} title={c?.card?.card?.title} amount={c?.card?.card?.itemCards?.length} menu={c?.card?.card?.itemCards} />)
+                            categories.map((c) => c?.card?.card?.categories ? <ResSubMenuAccordian key={c?.card?.card?.categoryId} title={c?.card?.card?.title} list={c?.card?.card?.categories} /> : <ResMenuAccordian key={c?.card?.card?.title} title={c?.card?.card?.title} amount={c?.card?.card?.itemCards?.length} menu={c?.card?.card?.itemCards} />)
                         }
                     </div>
                 </>}

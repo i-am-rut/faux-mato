@@ -15,3 +15,5 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/in/i-am-rutpatil'
 export const SWIGGY_SEARCH_SUGGESTIONS = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/search/suggest?lat=12.9352403&lng=77.624532&str="
 
 export const RES_BY_DISH_API = "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9352403&lng=77.624532&"
+
+export const CART_EMPTY_IMAGE = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
