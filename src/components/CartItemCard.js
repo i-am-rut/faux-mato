@@ -14,7 +14,6 @@ const CartItemCard = ({item}) => {
     dispatch(removeItem(item))
   }
 
-  console.log("CartItem===> ", cartItem)
 
   return (
     <div className='flex gap-4 max-w-5xl items-center p-4 border-b-2 border-gray-300'>

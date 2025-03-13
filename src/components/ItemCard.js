@@ -27,8 +27,6 @@ const ItemCard = ({ item, resInfo }) => {
         dispatch(removeItem(item))
     }
 
-    const isInCart = item?.card?.info?.id === cartItem.id
-    console.log(" This is in cart ==>",isInCart)
 
     return (
         <>
@@ -46,7 +44,7 @@ const ItemCard = ({ item, resInfo }) => {
                 </div>
                 <div>
                     <img className='w-36 h-36 rounded-lg bg-green-100 relative' src={CLOUDINARY_CDN_URL + item?.card?.info?.imageId} alt={`${item?.card?.info?.name} image`} />
-                    {isInCart ? 
+                    {false? 
                         <div className='flex absolute gap-0 mt-[-2rem] ml-6'>
                             <button 
                                 onClick={handleRemoveItem}

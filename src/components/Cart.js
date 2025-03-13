@@ -1,8 +1,9 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { clearCart } from '../utils/cartSlice'
-import { CLOUDINARY_CDN_URL } from '../utils/constants'
+import { CART_EMPTY_IMAGE, CLOUDINARY_CDN_URL } from '../utils/constants'
 import CartItemCard from './CartItemCard'
+import { Link } from 'react-router'
 
 const Cart = () => {
   const cartItems = useSelector(store => store.cart.items)
@@ -50,8 +51,11 @@ const Cart = () => {
                 <h3 className='text-2xl font-bold'>₹{total/100}</h3>
               </div>
             </div> :
-            <div>
-              cart empty things
+            <div className='text-center my-12'>
+              <img className='w-4/12 mx-auto' src={CART_EMPTY_IMAGE} alt='Cart empty image' />
+              <h1 className='text-2xl font-bold text-gray-800 my-4'>Your cart is empty</h1>
+              <p className='pb-4'>You can go to home page to view more restaurants</p>
+              <Link to="/" className='px-4 py-2 rounded-lg text-white font-bold bg-orange-500 cursor-pointer'>Go TO HOMEPAGE</Link>
             </div>
           }
         </div>
