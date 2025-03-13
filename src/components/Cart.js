@@ -12,7 +12,9 @@ const Cart = () => {
     dispatch(clearCart())
   }
 
-  console.log("cartItems ==>", cartItems)
+  const total = cartItems.map(item => ({price : item?.itemInfo?.price || item?.itemInfo?.defaultPrice, amount : item?.amount})).reduce((acc, curr) => acc+(curr.price*curr.amount), 0)
+
+  console.log("total ==>", total)
 
   return (
     <div className='my-8 mx-2'>
@@ -38,10 +40,14 @@ const Cart = () => {
                 </div>
                 <h3 className='text-xl font-bold'>{cartItems[0].resInfo.deliveryTime}</h3>
               </div>
-              <div className=''>
+              <div className='bg-white'>
                 {
-                  cartItems.map(item => <CartItemCard item={item} />)
+                  cartItems.map(item => <CartItemCard key={item.id} item={item} />)
                 }
+              </div>
+              <div className='flex justify-between p-4 bg-white rounded-b-lg'>
+                <h3 className='text-xl font-bold'>Cart Total:</h3>
+                <h3 className='text-2xl font-bold'>₹{total/100}</h3>
               </div>
             </div> :
             <div>
