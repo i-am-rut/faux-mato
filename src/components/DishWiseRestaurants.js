@@ -35,6 +35,7 @@ const DishWiseRestaurants = () => {
     if(fail === 1) {
         navigate("*")
     }
+    console.log(restaurants)
 
   return (
     <div className='my-8 mx-2'>
@@ -47,7 +48,7 @@ const DishWiseRestaurants = () => {
             }
             {restaurants ?
                 <div className="flex flex-wrap gap-4 pb-4 mt-20">
-                    {restaurants.map(res => <Link to={"restaurant/" + res.card.card.info.id} key={res.card.card.info.id} className="relative">
+                    {restaurants.map(res => <Link to={"/restaurant/" + res.card.card.info.id} key={res.card.card.info.id} className="relative">
                     {res.card.card.info.promoted ? <RestaurantCardWithPromoted resData={res.card.card.info} /> :
                         <ReastaurantCard  resData={res.card.card.info} />
                     }</Link>)
